@@ -1,0 +1,802 @@
+/*
+Theme Name: Rochester
+Theme URI: https://rochestermfa.org
+Template: blogsite
+Author: Rochester Museum of Fine Arts
+Author URI: https://rochestermfa.org
+Description: Custom theme for the Rochester Museum of Fine Arts
+Tags: one-column,two-columns,right-sidebar,flexible-header,custom-colors,custom-header,custom-menu,custom-logo,editor-style,featured-images,footer-widgets,sticky-post,theme-options,threaded-comments,translation-ready
+Version: 1.1.24
+Updated: 2022-04-04 20:36:32
+*/
+
+.sf-menu li a .menu-text {
+    border-radius: 0 !important;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+button, .btn, input[type="submit"], input[type="reset"], input[type="button"], .comment-form label, label, h1, h2, h3, h4, h5, h6 {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.page {
+    margin-bottom: -20px;
+    padding-bottom: 0;
+}
+
+.wp-block-buttons>.wp-block-button {
+    margin-bottom: 20px;
+}
+
+@media(min-width: 479px) {
+    .no-desktop-bottom-margin {
+        margin-bottom: 0 !important;
+    }
+}
+
+.entry-content ul {
+    list-style: none;
+    text-indent: -16px;
+    margin-left: 20px;
+
+}
+
+.site-header {
+    background-color: black;
+    position: fixed;
+    z-index: 10;
+}
+
+.site-content {
+    padding-top: 100px;
+}
+
+@media only screen and (max-width: 479px) {
+    .site-content {
+        padding: 80px 0 !important;
+    }
+}
+
+#primary-menu .menu-text {
+    color: white;
+}
+
+img.custom-logo {
+    max-width: 100px;
+}
+
+.site-branding {
+    margin-top: 12px
+}
+
+body {
+    background-color: white;
+}
+
+.post-home-page {
+    margin-top: -20px;
+}
+
+.post-home-page iframe {
+    margin-bottom: 0 !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.entry-content h1,
+.entry-content h2,
+.entry-content h3,
+.entry-content h4,
+.entry-content h5,
+.entry-content h6 {
+    margin-bottom: 20px;
+}
+
+.wp-block-columns {
+    margin-bottom: 10px;
+}
+
+.sf-menu li a {
+    font-weight: 400;
+}
+/* remove reception from archive */
+.collection-number-none {
+    padding-top: 15px;
+}
+
+.artist-title {
+    font-style: italic;
+}
+
+.permanent-collection-card {
+    font-size: 14px !important;
+	/* margin-bottom: 15px;  remove reception from archive */
+}
+
+.sales-card * {
+	text-decoration: none !important;
+	color: inherit !important;
+}
+
+.sales-card {
+	margin-bottom: 25px;
+}
+
+.collection-number {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    font-weight: 200;
+}
+
+.sales-title {
+	font-size: 14px !important;
+    font-weight: 200;
+	font-style: italic;
+}
+
+.sales-link, .artist-link {
+	font-size: 14px !important;
+    font-weight: 200;
+}
+
+.pull-down {
+    margin-top: 7px;
+}
+
+.sidebar {
+    padding-top: 27px;
+}
+
+.sidebar .widget_text {
+    padding: 0;
+    font-size: 14px !important;
+    font-weight: 200;
+}
+
+.sidebar h2 {
+    font-size: 16px !important;
+    font-weight: 200;
+}
+
+.widget-blogsite-recent {
+    padding-top: 10px !important;
+}
+
+@media(min-width: 479px) {
+    .widget-blogsite-recent {
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+    }
+}
+
+.site-footer .widget-posts-thumbnail ul > li:first-child, .sidebar .widget-posts-thumbnail ul > li:first-child {
+    margin-bottom: 20px;
+}
+
+.extra-header-space {
+    margin-bottom: 7px;
+}
+
+@media(max-width: 1023px) {
+
+    .post .wp-block-columns,
+    .permanent-collection .wp-block-columns {
+        flex-direction: column-reverse;
+    }
+
+    .pull-down {
+        margin-bottom: 10px;
+    }
+	
+    .post-type-archive-permanent-collection .widget_media_image img,
+    .category-bernier-room .widget_media_image img,
+    .category-carnegie-gallery .widget_media_image img,
+    .category-digital-exhibitions .widget_media_image img,
+	.category-public-art .widget_media_image img {
+        width: 100%;
+    }
+	
+    .widget-blogsite-recent {
+        display: none;
+    }
+}
+
+.bread-up {
+    margin-bottom: -10px;
+}
+
+.site-content.container {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+@media(max-width: 1023px) {
+    .site-content.container {
+        display: flex;
+        flex-direction: column-reverse;
+		justify-content: space-between;
+    }
+
+    .sidebar {
+        padding-top: 0;
+    }
+
+    .sidebar .widget_text {
+        margin-bottom: 0 !important;
+        padding-bottom: 5px !important;
+    }
+
+    .sidebar .widget h2,
+    .sidebar .widget .widget-title {
+        font-size: 24px !important;
+    }
+}
+
+.archive .site-main {
+    padding-right: 30px;
+}
+
+/*
+ * Fix color
+ */
+
+.sf-menu li a:hover .menu-text {
+    background-color: rgb(90, 179, 203);
+}
+
+.sf-menu li.current-menu-item a .menu-text,
+.sf-menu li.current-menu-item a:hover .menu-text {
+    background-color: rgb(90, 179, 203);
+}
+
+.sf-menu li li a:hover .menu-text {
+    color: rgb(90, 179, 203);
+}
+
+.content-loop .entry-category a {
+    background-color: rgb(90, 179, 203);
+}
+
+.single #primary .entry-header .entry-category a {
+    color: rgb(90, 179, 203);
+}
+
+.read-more a:hover {
+    color: rgb(90, 179, 203);
+}
+
+.single #primary .entry-header .entry-meta .entry-category a {
+    color: rgb(90, 179, 203);
+}
+
+.pagination .page-numbers:hover {
+    background-color: rgb(90, 179, 203);
+}
+
+.pagination .page-numbers.current {
+    color: rgb(90, 179, 203);
+}
+
+.pagination .page-numbers.current:hover {
+    background-color: rgb(90, 179, 203);
+}
+
+.entry-tags .tag-links a:hover {
+    background-color: rgb(90, 179, 203);
+}
+
+.sidebar .widget h2 a:hover,
+.sidebar .widget .widget-title a:hover {
+    color: rgb(90, 179, 203);
+}
+
+.site-footer .widget-posts-thumbnail ul>li.post-list:nth-of-type(4) span,
+.sidebar .widget-posts-thumbnail ul>li.post-list:nth-of-type(4) span {
+    background-color: rgb(90, 179, 203);
+}
+
+.widget_tag_cloud .tagcloud a:hover {
+    background-color: rgb(90, 179, 203);
+}
+
+.site-footer .widget .widget-title a:hover {
+    color: rgb(90, 179, 203);
+}
+
+.site-footer .widget ul>li a:hover {
+    color: rgb(90, 179, 203);
+}
+
+.sidebar .widget_tabs ul.horizontal li.active a,
+.site-footer .widget_tabs ul.horizontal li.active a {
+    color: rgb(90, 179, 203);
+}
+
+.sidebar .widget_tabs ul.horizontal li.active .fa,
+.site-footer .widget_tabs ul.horizontal li.active .fa {
+    color: rgb(90, 179, 203);
+}
+
+.sidebar .widget_tabs .tab-content .tag-cloud-link:hover,
+.site-footer .widget_tabs .tab-content .tag-cloud-link:hover {
+    background-color: rgb(90, 179, 203);
+}
+
+#site-bottom .site-info a:hover {
+    color: rgb(90, 179, 203);
+}
+
+#site-bottom .footer-nav li a:hover {
+    color: rgb(90, 179, 203);
+}
+
+.site-title a,
+a:hover,
+.site-header .search-icon:hover span,
+.breadcrumbs .breadcrumbs-nav a:hover,
+.entry-title a:hover,
+article.hentry .edit-link a,
+.author-box a,
+.page-content a,
+.entry-content a,
+.comment-author a,
+.comment-content a,
+.comment-reply-title small a:hover,
+.sidebar .widget a,
+.sidebar .widget ul li a:hover,
+.sidebar .widget ol li a:hover,
+#post-nav a:hover h4 {
+    color: rgb(90, 179, 203);
+}
+
+button,
+.btn,
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+#back-top a span {
+    background-color: rgb(90, 179, 203);
+}
+
+.sf-menu li li a:hover .menu-text {
+    color: rgb(90, 179, 203) !important;
+}
+
+/*
+ * Navigation
+ */
+ 
+.header-toggles * {
+    color: white !important;
+}
+
+.header-toggles svg {
+    filter: invert(97%) sepia(6%) saturate(290%) hue-rotate(204deg) brightness(116%) contrast(100%);
+}
+/*
+.header-toggles {
+    padding-right: 10px;
+}
+*/
+.site-header .container {
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 100%;
+}
+
+.site-header .primary-navigation {
+    float: right;
+    position: relative;
+}
+
+.header-search-btn {
+    position: relative;
+    float: right;
+    display: block;
+    top: 19px;
+    margin-left: 5px;
+}
+
+
+.header-search-btn .search-submit {
+    border-radius: 25px;
+    background-color: transparent;
+    padding: 10px;
+    color: #fff;
+    position: relative;
+    text-align: center;
+}
+
+.header-search-btn img {
+	height: 20px;
+	width: 20px;
+}
+
+.header-search-btn .search-submit .genericon {
+    font-size: 18px;
+}
+
+.header-search-btn .search-submit:hover {
+    background-color: rgb(90, 179, 203);
+}
+
+/*
+@media only screen and (max-width: 959px) {
+    .header-search-btn {
+        display: none;
+    }
+}
+*/
+
+.menu-item-has-children * {
+    color: white !important;
+}
+
+.sub-menu * {
+    color: black !important;
+    font-size: 12px;
+}
+
+@media(max-width: 500px) {
+    .sub-menu * {
+        font-size: 14px;
+    }
+}
+
+.ancestor-wrapper a {
+    color: black !important;
+}
+
+
+@media (max-width: 1023px) {	
+    .site-header .container {
+        padding-left: 0px;
+		padding-right: 10px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+    }
+	
+	.header-search-btn {
+		order: -1;
+	}
+	
+	.header-toggles {
+		position: inherit !important;
+	}
+	
+	.site-branding {
+		margin-right: 0;
+	}
+	
+	.header-search-btn .search-submit .genericon {
+		font-size: 30px;
+	}
+	
+	.header-search-btn {
+		top: 5px;
+	}
+	
+	
+	.header-search-btn img {
+		height: 25px;
+		width: 25px;
+	}
+	
+	.header-search-btn .search-submit:hover {
+    	background-color: inherit;
+	}
+}
+
+/*
+ * Remove entry and author info
+ */
+
+.entry-meta {
+    display: none;
+}
+
+/*
+ * Homepage slider fix
+ */
+
+@media (min-width: 500px) {
+    .wp-block-ap-block-posts.apbAdvancedPosts {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.apbPostText {
+    background-color: transparent !important;
+}
+
+.apbPostTitle a {
+    color: white !important;
+    text-decoration: none;
+    /*font-weight: bold;*/
+}
+
+.apbPost.apbPostOverlay.apbPostOverlayBox.swiper-slide .apbPostText {
+    top: 90% !important;
+}
+
+
+@media (max-width: 500px) {
+
+    .apbSliderPosts,
+    .apbSliderPosts .swiper-slide {
+        min-height: 450px !important;
+    }
+
+    .post-home-page {
+        margin-top: 0;
+    }
+	
+	.mobile-gap {
+		gap: 1em !important;
+	}
+}
+
+/*
+ * Footer
+ */
+
+@media(max-width: 479px) {
+    .site-content {
+        padding-bottom: 0px !important;
+    }
+}
+
+.footer-columns {
+    background-color: rgb(243, 242, 242);
+}
+
+.footer-columns .footer-column {
+    width: 100%;
+}
+
+.footer-widget * {
+    font-size: 14px !important;
+}
+
+.footer-widget :not(b):not(strong) {
+    font-weight: 200;
+}
+
+
+.footer-widget b,
+.footer-widget strong {
+    font-weight: 600 !important;
+}
+
+.footer-widget :not(a) {
+    color: #737373 !important;
+}
+
+.footer-widget {
+    display: block;
+}
+
+#site-bottom {
+    display: none;
+}
+
+.site-footer .widget a {
+    color: rgb(90, 179, 203);
+}
+
+.footer-widget {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+    margin-bottom: 0px !important;
+}
+
+.footer-columns {
+    padding: 0px !important;
+}
+
+.site-footer .widget-posts-thumbnail ul>li.post-list span,
+.sidebar .widget-posts-thumbnail ul>li.post-list span {
+    background-color: #2dde98;
+    color: #fff;
+}
+
+.site-footer .widget-posts-thumbnail ul>li.post-list:nth-of-type(5) span,
+.sidebar .widget-posts-thumbnail ul>li.post-list:nth-of-type(5) span {
+    background-color: #008eaa;
+    color: #fff;
+}
+
+.donate-button a {
+    text-decoration: none;
+}
+
+/*
+ * Content loop colors fix
+ */
+
+.content-loop .hentry:nth-of-type(1n) .entry-category a {
+    background-color: #2dde98;
+}
+
+.content-loop .hentry:nth-of-type(2n) .entry-category a {
+    background-color: #1cc7d0;
+}
+
+.content-loop .hentry:nth-of-type(3n) .entry-category a {
+    background-color: #008eaa;
+}
+
+.content-loop .hentry:nth-of-type(4n) .entry-category a {
+    background-color: #ff9900;
+}
+
+.content-loop .hentry:nth-of-type(5n) .entry-category a {
+    background-color: #ff6c5f;
+}
+
+.content-loop .hentry:nth-of-type(6n) .entry-category a {
+    background-color: #ff4f81;
+}
+
+.content-loop .hentry:nth-of-type(7n) .entry-category a {
+    background-color: #b84592;
+}
+
+.content-loop .hentry:nth-of-type(8n) .entry-category a {
+    background-color: #8e43e7;
+}
+
+.content-loop .hentry:nth-of-type(9n) .entry-category a {
+    background-color: #3369e7;
+}
+
+.content-loop .hentry:nth-of-type(10n) .entry-category a {
+    background-color: #00aeff;
+}
+
+/*
+ * Mailchimp
+ */
+
+#mc_embed_signup .mc-field-group {
+    padding-bottom: 15px;
+}
+
+#mc_embed_signup form {
+    padding: 0 !important;
+}
+
+.SprdMain .sprd-header__title {
+    visibility: hidden;
+}
+
+.sprd-skip-nav__item {
+    visibility: hidden;
+}
+
+#myShop {
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+
+.customPageBackground,
+.sprd-bg-m1 {
+    background-color: transparent !important;
+}
+
+#buttonSpreadshirt {
+    display: none;
+}
+
+.sprd-header__burgerbutton {
+    display: none !important;
+}
+
+.post-type-archive-permanent-collection .breadcrumbs,
+.category-digital-exhibitions .breadcrumbs,
+.category-carnegie-gallery .breadcrumbs,
+.category-bernier-room .breadcrumbs,
+.category-public-art .breadcrumbs {
+    display: none;
+}
+
+.wpforms-submit-container button,
+#mc-embedded-subscribe {
+    border-radius: 0 !important;
+    background-color: #5ab3cb !important;
+    border: none !important;
+    color: white !important;
+    font-weight: 400 !important;
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+    padding-bottom: 0 !important;
+    padding-top: 0 !important;
+    height: 40px !important;
+    font-size: 1.125em !important;
+}
+
+@media(min-width: 479px) {
+    #menu-item-1580 {
+        display: none;
+    }
+}
+
+.wp-block-gallery {
+	margin-bottom: 30px;
+}
+
+.ily-matt {
+	margin-left: 20px;
+}
+
+.menu-text {
+	
+}
+
+.white * {
+	color: white !important;
+}
+
+.white {
+	margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 479px) {
+    .content-loop .thumbnail-link {
+		float: none !important;
+	}
+	
+	.archive .site-main {
+		padding-right: 10px;
+	}
+}
+
+/*
+.paged-2 .wp-post-image {
+	display: none;
+}
+*/
+
+@media(min-width: 479px) {
+	.content-loop .post,
+	.content-loop .search-entry,
+	.content-loop .permanent-collection {
+		display: flex;
+	}
+}
+
+.addtoany_list {
+	display: inline-block !important;
+	margin-bottom: 15px;
+	margin-top: 5px;
+	margin-left: -4px;
+}
+
+.content-loop .entry-summary {
+	display: inline-block;
+}
+
+@media only screen and (max-width: 479px) {
+	.page-title, .single h1.entry-title, .page h1.entry-title {
+		font-size: 30px !important;
+	}
+}
+
+/* remove reception from archive 
+.content-loop .category-digital-exhibitions .collection-number,
+.content-loop .category-carnegie-gallery .collection-number,
+.content-loop .category-bernier-room .collection-number {
+    display: none;
+} */
