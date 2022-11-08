@@ -6,7 +6,7 @@ Author: Rochester Museum of Fine Arts
 Author URI: https://rochestermfa.org
 Description: Custom theme for the Rochester Museum of Fine Arts
 Tags: one-column,two-columns,right-sidebar,flexible-header,custom-colors,custom-header,custom-menu,custom-logo,editor-style,featured-images,footer-widgets,sticky-post,theme-options,threaded-comments,translation-ready
-Version: 1.1.24
+Version: 1.1.25
 Updated: 2022-04-04 20:36:32
 */
 
@@ -531,6 +531,14 @@ input[type="button"],
 
 
 @media (max-width: 500px) {
+	
+	.apbPost.apbPostOverlay.apbPostOverlayBox.swiper-slide .apbPostText {
+    	top: 85% !important;
+	}
+	
+	.apbPost .apbPostTitle a {
+		font-size: 20px !important;
+	}
 
     .apbSliderPosts,
     .apbSliderPosts .swiper-slide {
