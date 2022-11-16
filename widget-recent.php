@@ -76,7 +76,7 @@ class Rochester_Recent_Widget extends WP_Widget {
 			$recent = new WP_Query( $args );
 
 			// Store the transient.
-			set_transient( 'blogsite_recent_widget_' . $this->id, $recent );
+			set_transient( 'rochester_recent_widget_' . $this->id, $recent );
 
 		}
 
@@ -156,7 +156,7 @@ class Rochester_Recent_Widget extends WP_Widget {
 	 * @since  1.0.0
 	 */
 	function flush_widget_transient() {
-		delete_transient( 'blogsite_recent_widget_' . $this->id );
+		delete_transient( 'rochester_recent_widget_' . $this->id );
 	}
 
 	/**

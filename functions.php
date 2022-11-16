@@ -169,15 +169,19 @@ add_action(
 
 add_filter( 'wpseo_schema_needs_author', '__return_false' );
 
-function rochester_first_category() {
+function rochester_primary_category() {
     $category = get_the_category();
-    if ($category) {
-      return $category[0]->slug;
-    }    
+	$index = 0;
+	
+	if($category && $category[0]->slug === 'now-on-view' && count($category) > 1) {
+		$index = 1;
+	}
+	
+	return $category[$index]->slug;
 }
 
 function get_address() {
-	$cat = rochester_first_category();
+	$cat = rochester_primary_category();
 	if($cat == 'bernier-room' || $cat == 'digital-exhibitions') {
 		$address = '150 Wakefield Street, Rochester, NH 03867';
 	} else if($cat == 'carnegie-gallery') {
@@ -195,4 +199,26 @@ function blogsite_custom_excerpt_length( $length ) {
     } else {
        return '55'; 
     }
+}
+
+function rochester_is_on_view() {
+	if(has_category('now-on-view') && has_category(array('bernier-room', 'digital-exhibitions', 'carnegie-gallery'))) {
+		return true;
+	} else {
+		return false;
+	}
+}
+
+function blogsite_first_category() {
+	$category = get_the_category();
+	$onView = rochester_is_on_view();
+	$index = 0;
+	
+	if($category && $onView && $category[0]->slug !== 'now-on-view' && count($category) > 1) {
+		$index = 1;
+	}
+	
+    if ($category) {
+      echo '<a href="' . esc_url( get_category_link( $category[$index]->term_id ) ) . '">' . esc_html( $category[$index]->name ) .'</a> ';
+    }    
 }
