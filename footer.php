@@ -18,8 +18,14 @@
 		<?php if ( is_active_sidebar( 'footer' ) ) { ?>
 
 			<div class="footer-columns clear">
+				
+				<div class="container clear footer-header">
+			
+					<?php dynamic_sidebar( 'footer-header' ); ?>
 
-				<div class="container clear">
+				</div><!-- .container -->
+
+				<div class="container clear footer-flex">
 
 					<?php dynamic_sidebar( 'footer' ); ?>
 

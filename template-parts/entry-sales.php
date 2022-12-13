@@ -22,4 +22,13 @@ function format_phone_number_rochester($input) {
 		?>
 	</div>
 	<?php
+	} else if ( 'permanent-collection' === get_post_type() && get_artist_link() != '') {
+		?>
+		<div class="sales-card">
+			<?php
+				echo '<div class="sales-title">For more information</div>';
+				echo '<div class="artist-link">' . get_artist_link() . '</div>';
+			?>
+		</div>
+	<?php
 	}

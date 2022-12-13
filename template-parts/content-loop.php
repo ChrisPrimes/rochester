@@ -1,5 +1,9 @@
 <?php $class = ( $wp_query->current_post + 1 === $wp_query->post_count ) ? 'clear last' : 'clear'; ?>
-
+<?php
+if(rochester_is_on_view()) {
+	echo '<a id="now-on-view"></a>';
+}
+?>
 <div id="post-<?php the_ID(); ?>" <?php post_class( $class ); ?>>	
 	<div>
 	<?php if ( has_post_thumbnail() ) { ?>

@@ -6,20 +6,20 @@ Author: Rochester Museum of Fine Arts
 Author URI: https://rochestermfa.org
 Description: Custom theme for the Rochester Museum of Fine Arts
 Tags: one-column,two-columns,right-sidebar,flexible-header,custom-colors,custom-header,custom-menu,custom-logo,editor-style,featured-images,footer-widgets,sticky-post,theme-options,threaded-comments,translation-ready
-Version: 1.1.25
+Version: 1.1.26
 Updated: 2022-04-04 20:36:32
 */
 
 .sf-menu li a .menu-text {
-    border-radius: 0 !important;
+    border-radius: 5px !important;
 }
 
 body {
-	font-family: 'Montserrat', sans-serif !important;
+	font-family: 'Open Sans', sans-serif !important;
 }
 
 button, .btn, input[type="submit"], input[type="reset"], input[type="button"], .comment-form label, label, h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .page {
@@ -65,11 +65,18 @@ button, .btn, input[type="submit"], input[type="reset"], input[type="button"], .
 }
 
 img.custom-logo {
-    max-width: 100px;
+    max-width: 85px;
 }
 
 .site-branding {
-    margin-top: 12px
+    margin-top: 12px;
+	margin-left: 7px;
+}
+
+@media(min-width: 479px) {
+	.site-branding {
+		margin-left: 7px;
+	}
 }
 
 body {
@@ -82,7 +89,7 @@ body {
 
 .post-home-page iframe {
     margin-bottom: 0 !important;
-	font-family: 'Montserrat', sans-serif !important;
+	font-family: 'Open Sans', sans-serif !important;
 }
 
 .entry-content h1,
@@ -156,7 +163,7 @@ body {
 }
 
 .sidebar h2 {
-    font-size: 16px !important;
+    font-size: 20px !important;
     font-weight: 200;
 }
 
@@ -230,8 +237,22 @@ body {
 
     .sidebar .widget h2,
     .sidebar .widget .widget-title {
-        font-size: 24px !important;
+        font-size: 1.6em !important;
     }
+	
+	.sidebar .widget h2,
+	.sidebar .widget .widget-title {
+    	margin-bottom: 5px;
+		line-height: 1.25;
+	}
+	
+	.sidebar .widget .gallery-link {
+		font-size: 14px;
+	}
+	
+	.sidebar .widget {
+		 margin-bottom: 0 !important;
+	}
 }
 
 .archive .site-main {
@@ -422,13 +443,13 @@ input[type="button"],
     background-color: rgb(90, 179, 203);
 }
 
-/*
+
 @media only screen and (max-width: 959px) {
     .header-search-btn {
         display: none;
     }
 }
-*/
+
 
 .menu-item-has-children * {
     color: white !important;
@@ -469,6 +490,7 @@ input[type="button"],
 	
 	.site-branding {
 		margin-right: 0;
+		margin-left: 14px;
 	}
 	
 	.header-search-btn .search-submit .genericon {
@@ -493,11 +515,11 @@ input[type="button"],
 /*
  * Remove entry and author info
  */
-
+/*
 .entry-meta {
     display: none;
 }
-
+*/
 /*
  * Homepage slider fix
  */
@@ -552,11 +574,29 @@ input[type="button"],
 	.mobile-gap {
 		gap: 1em !important;
 	}
+	
+	.sidebar .widget_text {
+		font-weight: 400;
+		line-height: 1.8;
+		font-size: 16px !important;
+	}
+	
+	.mobile-reverse-direction {
+		flex-direction: column-reverse;
+	}
+	
+	.mobile-gallery-spacer {
+		height: 10px;
+	}
 }
 
 /*
  * Footer
  */
+
+.site-footer {
+    box-shadow: 0 50vh 0 50vh rgb(243, 242, 242);
+}
 
 @media(max-width: 479px) {
     .site-content {
@@ -570,13 +610,15 @@ input[type="button"],
 
 .footer-columns .footer-column {
     width: 100%;
+	margin-right: 0;
 }
 
 .footer-widget * {
     font-size: 14px !important;
+	color: #737373;
 }
 
-.footer-widget :not(b):not(strong) {
+.footer-widget:not(b):not(strong) {
     font-weight: 200;
 }
 
@@ -590,10 +632,6 @@ input[type="button"],
     color: #737373 !important;
 }
 
-.footer-widget {
-    display: block;
-}
-
 #site-bottom {
     display: none;
 }
@@ -603,15 +641,34 @@ input[type="button"],
 }
 
 .footer-widget {
+	display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 0 !important;
+    padding-bottom: 50px !important;
+    margin-bottom: 0 !important;
+}
+
+.footer-header {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.footer-header .footer-widget {
     padding-left: 20px;
     padding-right: 20px;
     padding-top: 50px !important;
-    padding-bottom: 50px !important;
-    margin-bottom: 0px !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .footer-columns {
     padding: 0px !important;
+}
+
+.footer-columns .footer-column {
+    flex: 1;
+  	min-width: 0;
 }
 
 .site-footer .widget-posts-thumbnail ul>li.post-list span,
@@ -624,6 +681,21 @@ input[type="button"],
 .sidebar .widget-posts-thumbnail ul>li.post-list:nth-of-type(5) span {
     background-color: #008eaa;
     color: #fff;
+}
+
+.footer-flex {
+	display: flex;
+}
+
+@media only screen and (max-width: 479px) {
+	.footer-flex {
+		flex-direction: column;
+		padding-bottom: 30px;
+	}
+	
+	.footer-widget {
+    	padding-bottom: 25px !important;
+	}
 }
 
 .donate-button a {
@@ -674,10 +746,19 @@ input[type="button"],
     background-color: #00aeff;
 }
 
+
+/*
+ * Padding between archive entries
+ */
+
+.content-loop .hentry {
+	margin-bottom: 26px;
+}
+
 /*
  * Mailchimp
  */
-
+/*
 #mc_embed_signup .mc-field-group {
     padding-bottom: 15px;
 }
@@ -685,7 +766,7 @@ input[type="button"],
 #mc_embed_signup form {
     padding: 0 !important;
 }
-
+*/
 .SprdMain .sprd-header__title {
     visibility: hidden;
 }
@@ -693,6 +774,10 @@ input[type="button"],
 .sprd-skip-nav__item {
     visibility: hidden;
 }
+
+/*
+ * End Mailchimp
+ */
 
 #myShop {
     margin-top: -40px;
@@ -716,13 +801,26 @@ input[type="button"],
 .category-digital-exhibitions .breadcrumbs,
 .category-carnegie-gallery .breadcrumbs,
 .category-bernier-room .breadcrumbs,
-.category-public-art .breadcrumbs {
+.category-public-art .breadcrumbs,
+.category-news .breadcrumbs,
+.category-past-projects .breadcrumbs
+{
     display: none;
+}
+
+.category-news #primary,
+.category-past-projects #primary {
+	width: 100%;
+}
+
+.category-news #secondary,
+.category-past-projects #secondary {
+	display: none;
 }
 
 .wpforms-submit-container button,
 #mc-embedded-subscribe {
-    border-radius: 0 !important;
+    border-radius: 10px !important;
     background-color: #5ab3cb !important;
     border: none !important;
     color: white !important;
@@ -800,6 +898,10 @@ input[type="button"],
 	.page-title, .single h1.entry-title, .page h1.entry-title {
 		font-size: 30px !important;
 	}
+	
+	.content-loop .entry-title {
+		font-size: 1.6em !important;
+	}
 }
 
 /* remove reception from archive 
@@ -808,3 +910,51 @@ input[type="button"],
 .content-loop .category-bernier-room .collection-number {
     display: none;
 } */
+
+
+/*
+ * Fix for scroll to anchor on mobile sidebar
+*/
+
+#now-on-view {
+	scroll-margin-top: 100px;
+}
+
+@media only screen and (min-width: 500px) {
+	.scroll-to-now-on-view {
+		display: none;
+	}
+}
+
+
+/*
+ * Custom visit button on mobile main navigation
+*/
+
+.header-visit-button {
+    float: left;
+    padding-top: 13px;
+    margin-right: 20px;
+	font-weight: 700;
+}
+
+/*
+ * Global "jump to top" customizations
+*/
+
+#back-top {
+	display: none !important;
+}
+/*
+#back-top a span {
+    border-radius: 15px;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+	font-size: 24px;
+}
+
+#back-top {
+    bottom: 20px;
+    right: 20px;
+}*/

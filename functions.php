@@ -130,8 +130,10 @@ function custom_archives_orderby( $query ) {
 }
 add_action( 'pre_get_posts', 'custom_archives_orderby' );
 
-function get_artist_link() {
-	$artist_website = get_field('artist_website');
+function get_artist_link_raw($artist_website = null) {
+	if($artist_website == null){
+		$artist_website = get_field('artist_website');	
+	}
 	
 	if($artist_website == '') {
 		return '';
@@ -150,7 +152,17 @@ function get_artist_link() {
 		}
 	}
 	
-	return '<a target="_blank" href="'. esc_html( $link ) . '">' . esc_html( $title ) . '</a>';
+	return array('title' => $title, 'link' => $link);
+}
+
+function get_artist_link($artist_website = null) {
+	$links = get_artist_link_raw($artist_website);
+	
+	if($links == '') {
+		return '';
+	}
+	
+	return '<a target="_blank" href="'. esc_html( $links['link'] ) . '">' . esc_html( $links['title'] ) . '</a>';
 }
 
 require_once('widget-recent.php');
@@ -169,8 +181,8 @@ add_action(
 
 add_filter( 'wpseo_schema_needs_author', '__return_false' );
 
-function rochester_primary_category() {
-    $category = get_the_category();
+function rochester_primary_category($post_id = false) {
+    $category = get_the_category($post_id);
 	$index = 0;
 	
 	if($category && $category[0]->slug === 'now-on-view' && count($category) > 1) {
@@ -180,8 +192,8 @@ function rochester_primary_category() {
 	return $category[$index]->slug;
 }
 
-function get_address() {
-	$cat = rochester_primary_category();
+function get_address($post_id = false) {
+	$cat = rochester_primary_category($post_id);
 	if($cat == 'bernier-room' || $cat == 'digital-exhibitions') {
 		$address = '150 Wakefield Street, Rochester, NH 03867';
 	} else if($cat == 'carnegie-gallery') {
@@ -197,8 +209,8 @@ function blogsite_custom_excerpt_length( $length ) {
     if ( is_admin() ) {
         return $length;
     } else {
-       return '55'; 
-    }
+		return '55';
+	}
 }
 
 function rochester_is_on_view() {
@@ -219,6 +231,22 @@ function blogsite_first_category() {
 	}
 	
     if ($category) {
-      echo '<a href="' . esc_url( get_category_link( $category[$index]->term_id ) ) . '">' . esc_html( $category[$index]->name ) .'</a> ';
+		echo '<a href="' . esc_url( get_category_link( $category[$index]->term_id ) ) . '">' . esc_html( $category[$index]->name ) .'</a> ';
     }    
 }
+
+// ----------------------
+function rochester_sidebar_init() {
+	register_sidebar( array(
+		'name'          => 'Footer Header',
+		'id'            => 'footer-header',
+		'description'   => 'Add widgets here.',
+		'before_widget' => '<div id="%1$s" class="widget footer-widget footer-column %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="widget-title">',
+		'after_title'   => '</h3>',
+	) );
+}
+add_action( 'widgets_init', 'rochester_sidebar_init' );
+
+require_once('shortcode.php');

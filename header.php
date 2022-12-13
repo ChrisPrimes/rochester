@@ -20,9 +20,11 @@
 <?php wp_head(); ?>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,700;1,200&display=swap" rel="stylesheet">
 <meta name="apple-mobile-web-app-title" content="Museum">
 <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="format-detection" content = "telephone=no">
 </head>
 
 <body <?php body_class(); ?>>
@@ -100,7 +102,8 @@
 			</nav><!-- #primary-nav -->
 
 			<div class="header-toggles">
-				<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle" style="padding-top:10px">
+				<div class="header-visit-button"><a href="/plan-your-visit">Visit</a></div>
+				<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle" style="padding-top:9px">
 				<svg viewBox="0 0 100 80" width="25" height="25">
 				  <rect width="100" height="10"></rect>
 				  <rect y="30" width="100" height="10"></rect>

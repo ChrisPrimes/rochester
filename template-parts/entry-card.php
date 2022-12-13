@@ -26,4 +26,11 @@
 		?>
 	</div>
 	<?php
+	} else if ( 'post' === get_post_type() && true === in_category('news') ) {
+		?>
+		<div class="permanent-collection-card">
+			<div class="art-medium"><?php echo get_the_date(); ?></div>
+			<div class="collection-number-none"></div>
+		</div>
+		<?php
 	}
